@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- CONFIGURACIÓN: idioma, título de la pestaña, descripción y hojas de estilos. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,58 +10,83 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+    <!-- ACCESIBILIDAD: enlace para saltar directamente al contenido usando el teclado. -->
     <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
     <!-- Cabecera de la Figura 3: marca, navegación y carrito. -->
+    <!-- INICIO CABECERA: logo, menú principal y carrito. -->
     <header class="cabecera">
         <nav class="contenedor navegacion" aria-label="Navegación principal">
+            <!-- LOGO: símbolo y nombre de la tienda. Al pulsarlo vuelve a Inicio. -->
             <a class="marca" href="Inicio.html" aria-label="GameZone, inicio">
                 <svg class="simbolo" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="12" fill="currentColor"/><path d="M12 16h16l3 12-7-4h-8l-7 4 3-12Z" stroke="#f8f4eb" stroke-width="2" stroke-linejoin="round"/><path d="M14 18v6m-3-3h6" stroke="#f8f4eb" stroke-width="2"/><circle cx="25" cy="19" r="1.4" fill="#f8f4eb"/><circle cx="28" cy="22" r="1.4" fill="#f8f4eb"/></svg>
                 Game<span>Zone</span><span class="marca-punto">.</span>
             </a>
+            <!-- INICIO MENÚ: opciones de navegación que aparecen en la parte superior. -->
             <ul class="menu">
+                <!-- INICIO: abre esta misma página; se marca como la opción actual. -->
                 <li><a class="activo" href="Inicio.html" aria-current="page">Inicio</a></li>
+                <!-- PRODUCTOS: baja al catálogo de esta página mediante id="productos". -->
                 <li><a href="#productos">Productos</a></li>
+                <!-- NOSOTROS: botón deshabilitado; la página sobre la tienda todavía está pendiente. -->
                 <li><button type="button" disabled title="Página pendiente">Nosotros</button></li>
+                <!-- BLOGS: botón deshabilitado; la página de noticias todavía está pendiente. -->
                 <li><button type="button" disabled title="Página pendiente">Blogs</button></li>
+                <!-- CONTACTO: por ahora baja al pie de página; aún no existe un formulario de contacto. -->
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <!-- FIN MENÚ PRINCIPAL. -->
             <!-- Controles visuales: se habilitarán al desarrollar sus vistas. -->
+            <!-- CARRITO: icono y contador de productos. Todavía no tiene lógica de compras. -->
             <button class="carrito" type="button" disabled title="Carrito pendiente de implementación">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 4h2l2 12h12l2-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
                 Carrito <span class="contador">0</span>
             </button>
         </nav>
     </header>
+    <!-- FIN CABECERA. -->
 
+    <!-- INICIO CONTENIDO PRINCIPAL: accesos de usuario, portada y catálogo. -->
     <main class="contenedor" id="contenido">
+        <!-- INICIO ACCESOS DE USUARIO: opciones de ingreso y registro, pendientes de implementar. -->
         <div class="accesos" aria-label="Acceso de usuarios">
+            <!-- INICIAR SESIÓN: acceso para usuarios que ya tengan una cuenta. -->
             <button type="button" disabled title="Inicio de sesión pendiente">Iniciar sesión</button>
             <span aria-hidden="true">/</span>
+            <!-- CREAR CUENTA: acceso al futuro formulario de registro. -->
             <button type="button" disabled title="Registro pendiente">Crear cuenta <span aria-hidden="true">↗</span></button>
         </div>
 
         <!-- Portada: información a la izquierda e imagen de la tienda a la derecha. -->
+        <!-- INICIO PORTADA: presentación principal de la tienda. -->
         <section class="portada" aria-labelledby="titulo-portada">
+            <!-- TEXTO DE PORTADA: frase superior, título grande, descripción y nota inferior. -->
             <div class="portada-texto">
                 <p class="sobretitulo"><span></span> TU ESPACIO PARA JUGAR</p>
                 <h1 id="titulo-portada">El juego empieza.<br><em>El mundo espera.</em></h1>
                 <p class="descripcion">Videojuegos, consolas y accesorios para hacer de cada partida tu momento favorito.</p>
+                <!-- BOTÓN EXPLORAR PRODUCTOS: lleva al catálogo situado debajo de la portada. -->
                 <a class="boton-principal" href="#productos">Explorar productos <span aria-hidden="true">↗</span></a>
                 <p class="nota-portada">Grandes aventuras. A tu manera.</p>
             </div>
+            <!-- IMAGEN DE PORTADA: fotografía principal y frase superpuesta. -->
             <div class="portada-visual">
                 <img src="img/portada.jpg" alt="Manos sosteniendo un control de videojuegos blanco" width="1200" height="1000" fetchpriority="high">
                 <span class="sello-foto">PAUSA AL DÍA. PLAY A LO TUYO.</span>
             </div>
         </section>
+        <!-- FIN PORTADA. -->
 
         <!-- Ocho productos en cuatro columnas, como en la referencia. Precios de muestra en CLP. -->
+        <!-- INICIO PRODUCTOS: destino de los enlaces que usan href="#productos". -->
         <section class="catalogo" id="productos" aria-labelledby="titulo-productos">
+            <!-- ENCABEZADO DEL CATÁLOGO: título de la sección y cantidad de productos. -->
             <div class="encabezado-seccion">
                 <div><p class="sobretitulo">ENCUENTRA TU PRÓXIMO FAVORITO</p><h2 id="titulo-productos">Una buena partida empieza aquí<span>.</span></h2></div>
                 <span class="total-productos">08 productos <span aria-hidden="true">↙</span></span>
             </div>
+            <!-- INICIO LISTA DE PRODUCTOS: cada article contiene imagen, categoría, nombre, descripción y precio. -->
             <div class="grilla-productos">
+                <!-- PRODUCTO 1: Control inalámbrico. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/control.jpg" alt="Control inalámbrico" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -69,6 +95,7 @@
                         <div class="producto-base"><p>Para tu próxima partida</p><strong>$54.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 2: Consola clásica. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/consola.jpg" alt="Consola clásica" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -77,6 +104,7 @@
                         <div class="producto-base"><p>Vuelve a tus favoritos</p><strong>$129.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 3: Audífonos over-ear. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/audifonos.jpg" alt="Audífonos over-ear" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -85,6 +113,7 @@
                         <div class="producto-base"><p>Escucha cada detalle</p><strong>$44.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 4: Teclado compacto. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/teclado.jpg" alt="Teclado compacto" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -93,6 +122,7 @@
                         <div class="producto-base"><p>Un lugar para cada tecla</p><strong>$64.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 5: Mouse de escritorio. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/mouse.jpg" alt="Mouse de escritorio" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -101,6 +131,7 @@
                         <div class="producto-base"><p>Precisión en cada movimiento</p><strong>$29.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 6: Consola portátil. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/portatil.jpg" alt="Consola portátil" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -109,6 +140,7 @@
                         <div class="producto-base"><p>Lleva el juego contigo</p><strong>$299.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 7: Selección de videojuegos. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/juegos.jpg" alt="Selección de videojuegos" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -117,6 +149,7 @@
                         <div class="producto-base"><p>Historias por descubrir</p><strong>$39.990</strong></div>
                     </div>
                 </article>
+                <!-- PRODUCTO 8: Monitor para tu setup. -->
                 <article class="producto">
                     <div class="producto-imagen"><img src="img/setup.jpg" alt="Monitor para tu setup" width="640" height="480" loading="lazy"></div>
                     <div class="producto-info">
@@ -127,16 +160,24 @@
                 </article>
             </div>
         </section>
+        <!-- FIN PRODUCTOS. -->
     </main>
+    <!-- FIN CONTENIDO PRINCIPAL. -->
 
     <!-- Pie de página de la portada; la suscripción se conectará en una próxima etapa. -->
+    <!-- INICIO CONTACTO / PIE DE PÁGINA: destino del menú Contacto; incluye marca, enlaces y boletín. -->
     <footer id="contacto">
         <div class="contenedor pie-principal">
+            <!-- MARCA DEL PIE: nombre de la tienda, frase y categorías. -->
             <div class="pie-marca"><a class="marca" href="Inicio.html">Game<span>Zone</span><span class="marca-punto">.</span></a><p>Tu espacio para jugar.</p><small>Videojuegos · Consolas · Accesorios</small></div>
+            <!-- ENLACES DEL PIE: permiten volver a Inicio o bajar al catálogo de Productos. -->
             <nav class="pie-enlaces" aria-label="Navegación del pie"><a href="Inicio.html">Inicio</a><a href="#productos">Productos</a></nav>
+            <!-- BOLETÍN: campo de correo y botón Suscribirme; ambos están deshabilitados por ahora. -->
             <div class="boletin"><label for="correo-boletin">Que la próxima novedad te encuentre.</label><div class="campo-boletin"><input id="correo-boletin" type="email" autocomplete="email" placeholder="Tu correo electrónico" disabled><button type="button" disabled title="Suscripción pendiente">Suscribirme <span aria-hidden="true">↗</span></button></div></div>
         </div>
+        <!-- INFORMACIÓN FINAL: año, nombre de la tienda y aclaración de proyecto académico. -->
         <div class="contenedor pie-legal"><small>© 2026 GameZone. Proyecto académico.</small><small>Hecho para quienes disfrutan jugar.</small></div>
     </footer>
+    <!-- FIN CONTACTO / PIE DE PÁGINA. -->
 </body>
 </html>
