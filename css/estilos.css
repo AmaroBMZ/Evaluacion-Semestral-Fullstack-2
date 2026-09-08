@@ -1,0 +1,166 @@
+/* COLORES QUE SE USARÁN EN EL SITIO */
+:root {
+    --color-fondo: #0d1020;
+    --color-principal: #8b5cf6;
+    --color-texto: #f8fafc;
+    --color-gris: #aab0c0;
+}
+
+/* ESTILOS GENERALES */
+body {
+    background-color: #f5f6fa;
+    color: #1e2333;
+    font-family: Arial, sans-serif;
+}
+
+/* MENÚ Y PIE DE PÁGINA */
+.menu-principal,
+footer {
+    background-color: var(--color-fondo);
+}
+
+.navbar-brand {
+    font-size: 1.45rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand span,
+.texto-destacado,
+.precio,
+.tarjeta-categoria a,
+.enlace-ver-mas {
+    color: var(--color-principal);
+}
+
+/* ENLACE AL CARRITO */
+.carrito {
+    font-weight: bold;
+}
+
+/* PORTADA PRINCIPAL */
+.portada {
+    background: radial-gradient(circle at right, #38216f 0%, var(--color-fondo) 55%);
+    color: var(--color-texto);
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.portada h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: bold;
+    max-width: 650px;
+}
+
+.texto-destacado,
+.tipo-producto {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.descripcion-portada {
+    color: var(--color-gris);
+    font-size: 1.1rem;
+    max-width: 580px;
+}
+
+.boton-principal {
+    background-color: var(--color-principal);
+    border-color: var(--color-principal);
+    padding: 0.7rem 1.5rem;
+}
+
+.imagen-portada {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    max-width: 100%;
+    width: 420px;
+}
+
+/* CATEGORÍAS */
+h2 {
+    font-weight: bold;
+}
+
+.tarjeta-categoria {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+.tarjeta-categoria h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.tarjeta-categoria p {
+    color: #687083;
+}
+
+.tarjeta-categoria a,
+.enlace-ver-mas {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.icono-categoria {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+/* PRODUCTOS DESTACADOS */
+.seccion-destacados {
+    background-color: #e9eaf1;
+}
+
+.tarjeta-producto {
+    border: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.imagen-producto {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.tipo-producto {
+    color: #757c8c;
+    margin-bottom: 0.4rem;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-outline-primary {
+    border-color: var(--color-principal);
+    color: var(--color-principal);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-principal);
+    border-color: var(--color-principal);
+}
+
+/* PIE DE PÁGINA */
+footer {
+    color: var(--color-gris);
+}
+
+/* AJUSTES PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 991px) {
+    .portada {
+        text-align: center;
+    }
+
+    .descripcion-portada {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
