@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ponte en contacto con GameZone.">
+    <title>Contacto | GameZone</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera"><nav class="contenedor navegacion" aria-label="Navegación principal"><a class="marca" href="Inicio.html" aria-label="GameZone, inicio"><svg class="simbolo" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="12" fill="currentColor"/><path d="M12 16h16l3 12-7-4h-8l-7 4 3-12Z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M14 18v6m-3-3h6" stroke="#fff" stroke-width="2"/><circle cx="25" cy="19" r="1.4" fill="#fff"/><circle cx="28" cy="22" r="1.4" fill="#fff"/></svg>Game<span>Zone</span><span class="marca-punto">.</span></a><ul class="menu"><li><a href="Inicio.html">Inicio</a></li><li><a href="productos.html">Productos</a></li><li><a href="about.html">Nosotros</a></li><li><a class="activo" href="contacto.html" aria-current="page">Contacto</a></li></ul><button class="carrito" type="button" disabled title="Carrito pendiente de implementación"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 4h2l2 12h12l2-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>Carrito <span class="contador">0</span></button></nav></header>
+    <!-- Contenido principal: información de contacto y formulario de consulta. -->
+    <main class="contenedor pagina-interior" id="contenido">
+        <section class="intro-pagina" aria-labelledby="titulo-contacto"><p class="sobretitulo">HABLEMOS</p><h1 id="titulo-contacto">Estamos para<br><em>ayudarte.</em></h1><p class="descripcion">¿Tienes una consulta sobre un producto o quieres saber más de GameZone? Déjanos un mensaje.</p></section>
+        <section class="contacto-distribucion" aria-label="Información y formulario de contacto"><aside class="datos-contacto"><h2>Encuéntranos<span>.</span></h2><p>Escríbenos por el medio que te resulte más cómodo. Te responderemos a la brevedad.</p><div class="dato"><strong>CORREO</strong><span>hola@gamezone.cl</span></div><div class="dato"><strong>HORARIO</strong><span>Lunes a viernes, 09:00 a 18:00</span></div><div class="dato"><strong>UBICACIÓN</strong><span>Concepción, Chile</span></div></aside><section class="formulario-contacto" aria-labelledby="titulo-formulario"><h2 id="titulo-formulario">Cuéntanos en qué podemos ayudarte<span>.</span></h2><form action="#" method="post"><div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div><div class="campo"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" required></div><div class="campo"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" required></textarea></div><button class="boton-principal" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button></form></section></section>
+    </main>
+    <!-- Pie de página: navegación secundaria y suscripción. -->
+    <footer><div class="contenedor pie-principal"><div class="pie-marca"><a class="marca" href="Inicio.html">Game<span>Zone</span><span class="marca-punto">.</span></a><p>Tu espacio para jugar.</p><small>Videojuegos · Consolas · Accesorios</small></div><nav class="pie-enlaces" aria-label="Navegación del pie"><a href="Inicio.html">Inicio</a><a href="productos.html">Productos</a><a href="about.html">Nosotros</a></nav><div class="boletin"><label for="correo-boletin">Que la próxima novedad te encuentre.</label><div class="campo-boletin"><input id="correo-boletin" type="email" placeholder="Tu correo electrónico"><button type="button">Suscribirme <span aria-hidden="true">↗</span></button></div></div></div><div class="contenedor pie-legal"><small>© 2026 GameZone. Proyecto académico.</small><small>Hecho para quienes disfrutan jugar.</small></div></footer>
+    <!-- Compatibilidad: los enlaces antiguos de Inicio se dirigen a la nueva portada. -->
+    <script>document.querySelectorAll('a[href="Inicio.html"]').forEach((enlace) => { enlace.href = 'index.html'; });</script>
+</body>
+</html>
