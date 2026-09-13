@@ -1,12 +1,12 @@
 /* Paleta cálida: modifica estas variables para cambiar la identidad del sitio. */
 :root {
-    --fondo: #f8f5ef;
-    --papel: #fffdf8;
-    --tinta: #342d29;
-    --secundario: #756b62;
-    --acento: #a44730;
-    --linea: #ded7cd;
-    --portada: #eee7dc;
+    --fondo: #f1f3f2;
+    --papel: #ffffff;
+    --tinta: #18372d;
+    --secundario: #60716a;
+    --acento: #008c45;
+    --linea: #d7dfdb;
+    --portada: #e2e9e5;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
@@ -37,7 +37,7 @@ h1, h2, h3, p { margin: 0; }
 .menu .activo { color: var(--acento); box-shadow: 0 2px var(--acento); }
 .carrito { display: flex; align-items: center; gap: 10px; background: none; border: 0; font-size: 13px; }
 .carrito svg { width: 23px; height: 23px; }
-.contador { background: #e8ded1; border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; font-size: 12px; }
+.contador { background: #cfe3d7; border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; font-size: 12px; }
 .accesos { display: flex; justify-content: flex-end; align-items: center; gap: 15px; height: 58px; font-size: 12px; }
 .accesos button { padding: 5px 0; color: var(--secundario); }
 .accesos button:last-child { color: var(--acento); }
@@ -52,8 +52,8 @@ h1, h2, h3, p { margin: 0; }
 h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(35px, 3.8vw, 54px); line-height: 1.12; font-weight: 400; letter-spacing: -2px; }
 h1 em { color: var(--acento); font-weight: 400; }
 .descripcion { color: var(--secundario); max-width: 360px; font-size: 14px; margin-top: 23px; line-height: 1.8; }
-.boton-principal { display: inline-flex; align-items: center; gap: 36px; background: var(--acento); color: #fffaf3; border-radius: 3px; padding: 13px 22px; margin-top: 29px; font-size: 13px; font-weight: 600; transition: background .2s; }
-.boton-principal:hover { background: #813521; color: #fffaf3; }
+.boton-principal { display: inline-flex; align-items: center; gap: 36px; background: var(--acento); color: #fff; border-radius: 3px; padding: 13px 22px; margin-top: 29px; font-size: 13px; font-weight: 600; transition: background .2s; }
+.boton-principal:hover { background: #006d35; color: #fff; }
 .boton-principal span { font-size: 20px; line-height: 1; }
 .nota-portada { margin-top: 20px; font-size: 11px; color: var(--secundario); }
 .portada-visual { position: relative; min-width: 0; }
@@ -80,14 +80,14 @@ h3 { font-size: 15px; font-weight: 600; line-height: 1.4; }
 .producto-base strong { font-size: 14px; white-space: nowrap; font-weight: 650; }
 
 /* Pie de página. */
-footer { background: #eee8de; border-top: 1px solid var(--linea); }
+footer { background: #e3e9e6; border-top: 1px solid var(--linea); }
 .pie-principal { display: grid; grid-template-columns: 1fr .65fr 1.3fr; gap: 40px; padding-block: 36px; align-items: center; }
 .pie-marca .marca { font-size: 25px; }
 .pie-marca p { font-size: 12px; margin-top: 5px; }
 .pie-marca small { font-size: 10px; color: var(--secundario); }
 .pie-enlaces { display: flex; gap: 22px; font-size: 12px; }
 .boletin label { display: block; font-family: Georgia, serif; font-size: 17px; margin-bottom: 11px; }
-.campo-boletin { display: flex; border-bottom: 1px solid #968577; }
+.campo-boletin { display: flex; border-bottom: 1px solid #8ca099; }
 .campo-boletin input { min-width: 0; width: 100%; padding: 10px 0; border: 0; background: none; font-size: 11px; }
 .campo-boletin input::placeholder { color: var(--secundario); opacity: 1; }
 .campo-boletin button { border: 0; background: none; color: var(--acento); font-size: 11px; white-space: nowrap; }
@@ -135,4 +135,55 @@ footer { background: #eee8de; border-top: 1px solid var(--linea); }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition: none !important; }
+}
+
+/* Páginas interiores */
+.pagina-interior { padding: 54px 0 72px; }
+.intro-pagina { max-width: 650px; margin-bottom: 38px; }
+.intro-pagina h1 { margin-top: 10px; }
+.intro-pagina .descripcion { max-width: 590px; }
+.catalogo-completo { padding-top: 0; }
+.catalogo-completo .grilla-productos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.producto-imagen img { object-position: center; }
+.historia { display: grid; grid-template-columns: 1.05fr .95fr; background: var(--papel); border: 1px solid var(--linea); }
+.historia-imagen { min-height: 370px; }
+.historia-imagen img { width: 100%; height: 100%; object-fit: cover; }
+.historia-texto { padding: 54px 48px; align-self: center; }
+.historia-texto h2 { margin-bottom: 20px; }
+.historia-texto p + p { margin-top: 14px; color: var(--secundario); }
+.valores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 28px; }
+.valor { padding: 25px; border-top: 3px solid var(--acento); background: var(--papel); }
+.valor p { margin-top: 8px; color: var(--secundario); font-size: 13px; }
+.equipo { margin-top: 62px; }
+.equipo .encabezado-seccion { margin-bottom: 26px; }
+.grilla-equipo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.miembro { padding: 28px; background: var(--papel); border-bottom: 1px solid var(--linea); }
+.miembro-inicial { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 18px; border-radius: 50%; color: #fff; background: var(--acento); font-family: Georgia, serif; font-size: 22px; }
+.miembro p { margin-top: 7px; color: var(--secundario); font-size: 13px; }
+.contacto-distribucion { display: grid; grid-template-columns: .8fr 1.2fr; gap: 25px; align-items: stretch; }
+.datos-contacto, .formulario-contacto { padding: 38px; background: var(--papel); border: 1px solid var(--linea); }
+.datos-contacto { background: var(--portada); }
+.datos-contacto h2, .formulario-contacto h2 { margin-top: 0; }
+.datos-contacto p { margin-top: 15px; color: var(--secundario); }
+.dato { padding: 18px 0; border-bottom: 1px solid var(--linea); }
+.dato strong, .dato span { display: block; }
+.dato strong { font-size: 12px; letter-spacing: 1px; color: var(--acento); }
+.dato span { margin-top: 4px; }
+.campo { margin-top: 18px; }
+.campo label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 600; }
+.campo input, .campo textarea { width: 100%; padding: 12px; color: var(--tinta); background: #fff; border: 1px solid var(--linea); border-radius: 2px; }
+.campo textarea { min-height: 130px; resize: vertical; }
+.formulario-contacto .boton-principal { border: 0; margin-top: 22px; cursor: pointer; }
+
+@media (max-width: 760px) {
+    .pagina-interior { padding-block: 38px 52px; }
+    .catalogo-completo .grilla-productos, .grilla-equipo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .historia, .contacto-distribucion { grid-template-columns: 1fr; }
+    .historia-imagen { min-height: 260px; }
+    .historia-texto, .datos-contacto, .formulario-contacto { padding: 32px; }
+    .valores { grid-template-columns: 1fr; }
+}
+@media (max-width: 440px) {
+    .catalogo-completo .grilla-productos, .grilla-equipo { grid-template-columns: 1fr; }
+    .historia-texto, .datos-contacto, .formulario-contacto { padding: 24px; }
 }
