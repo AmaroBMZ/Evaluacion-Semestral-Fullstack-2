@@ -133,6 +133,6 @@ datosListos.catch((error) => {
     const aviso = document.createElement("p");
     aviso.className = "alert alert-danger";
     aviso.setAttribute("role", "alert");
-    aviso.textContent = "No se pudo preparar la demostración: " + error.message;
+    aviso.textContent = "No se pudo iniciar la página: " + error.message;
     document.querySelector("main")?.prepend(aviso);
 });

@@ -131,6 +131,6 @@ datosListos.then(() => {
         const mensajes = GZ.leer("contactos");
         GZ.guardar("contactos", [...mensajes, {...datos, fecha: new Date().toISOString()}].slice(-100));
         contacto.reset();
-        mensaje.textContent = "Mensaje guardado en esta demostración local. No se ha enviado un correo a la tienda.";
+        mensaje.textContent = "Mensaje guardado en este navegador. No se ha enviado un correo a la tienda.";
     });
 }).catch(() => {});

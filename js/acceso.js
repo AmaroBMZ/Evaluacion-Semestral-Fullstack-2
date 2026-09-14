@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 // CABECERA: desplegable junto al carrito, cierre exterior, foco y teclado.
 const botonCuenta = document.querySelector(".boton-cuenta");
@@ -71,7 +71,7 @@ datosListos.then(() => {
     Formularios.conectar(boletin, async (datos, mensaje) => {
         const correo = datos.correo.trim().toLowerCase();
         GZ.guardar("boletin", [...new Set([...GZ.leer("boletin"), correo])]);
-        mensaje.textContent = "Suscripción guardada solo en esta demostración local.";
+        mensaje.textContent = "Suscripción guardada en este navegador. No se enviarán correos.";
         boletin.reset();
     });
 }).catch(() => {});
