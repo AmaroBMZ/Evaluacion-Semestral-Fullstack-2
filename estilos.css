@@ -1,19 +1,19 @@
 /* ESTILOS GENERALES: gris de fondo, texto oscuro y verde de contraste.
-   Verde elegido como aproximación visual, sin código Pantone especificado. */
+   Verdes elegidos para combinar con la imagen SG_logo.png. */
 body { font-family: Arial, sans-serif; background-color: #e5e5e5; color: #242424; }
 header, footer { background-color: #d2d2d2; }
-header { border-bottom: 4px solid #70b541; }
-footer { border-top: 4px solid #70b541; }
-a { color: #285c20; }
-a:hover { color: #183c13; }
+header { border-bottom: 4px solid #00b83f; }
+footer { border-top: 4px solid #00b83f; }
+a { color: #006b29; }
+a:hover { color: #004c1d; }
 h1, h2 { font-weight: bold; }
 h2 { margin-bottom: 18px; }
-/* Logo hecho con letras y CSS: no requiere imagen ni JavaScript. */
-.logo { display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px; background: #70b541; border: 2px solid #242424; border-radius: 8px; color: #15210f; font-size: 24px; font-weight: bold; }
+/* Logo de la tienda: conservar la proporción de la imagen, sin recortarla. */
+.logo { width: 80px; height: 62px; object-fit: contain; vertical-align: middle; }
 .marca { color: #242424; text-decoration: none; font-size: 21px; font-weight: bold; white-space: nowrap; }
 .barra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .nav-link { color: #242424; padding: 8px 10px; }
-.nav-link:hover, .nav-link.activo { color: #285c20; text-decoration: underline; }
+.nav-link:hover, .nav-link.activo { color: #006b29; text-decoration: underline; }
 .cuenta { text-align: right; }
 /* Secciones y tarjetas simples, sin animaciones ni efectos adicionales. */
 .panel, .card { background-color: #f8f8f8; border: 1px solid #b8b8b8; border-radius: 6px; }
@@ -21,12 +21,12 @@ h2 { margin-bottom: 18px; }
 .foto-producto { height: 160px; object-fit: cover; }
 .foto-detalle { width: 100%; height: 300px; object-fit: cover; }
 .foto-articulo { width: 100%; max-height: 320px; object-fit: cover; }
-.categoria { color: #365d2b; font-size: 13px; font-weight: bold; }
+.categoria { color: #006b29; font-size: 13px; font-weight: bold; }
 .precio { font-size: 21px; font-weight: bold; }
 .card-body .btn { margin-bottom: 6px; }
-.boton-verde { background-color: #70b541; border: 1px solid #477329; color: #15210f; font-weight: bold; }
-.boton-verde:hover { background-color: #5e9c35; color: #101b0b; }
-.boton-verde:disabled { background-color: #70b541; color: #15210f; opacity: .7; }
+.boton-verde { background-color: #00b83f; border: 1px solid #007a2b; color: #15210f; font-weight: bold; }
+.boton-verde:hover { background-color: #009c35; color: #101b0b; }
+.boton-verde:disabled { background-color: #00b83f; color: #15210f; opacity: .7; }
 /* Formularios centrados como en los mockups del Anexo. */
 .formulario { max-width: 580px; margin-left: auto; margin-right: auto; }
 .form-control, .form-select { border-color: #777; }
@@ -35,7 +35,7 @@ small { display: inline-block; margin-top: 5px; }
 .row-pie { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
 .row-pie form { max-width: 340px; }
 /* Accesibilidad: foco visible, enlace de salto y espacio al navegar por anclas. */
-:focus-visible { outline: 3px solid #285c20; outline-offset: 3px; }
+:focus-visible { outline: 3px solid #006b29; outline-offset: 3px; }
 [id] { scroll-margin-top: 20px; }
 .saltar { position: absolute; left: 12px; top: -80px; padding: 10px; background: white; z-index: 10; }
 .saltar:focus { top: 10px; }

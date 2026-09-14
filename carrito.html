@@ -21,9 +21,7 @@
             <nav class="container py-3" aria-label="Navegación principal">
                 <div class="barra">
                     <a class="marca" href="Inicio.html">
-                        <span class="logo" aria-hidden="true">
-                            SG
-                        </span>
+                        <img class="logo" src="imagenes/SG_logo.png" alt="Logo SG de Sikosis Gaming" width="80" height="62">
                         Sikosis Gaming
                     </a>
                     <ul class="nav">
@@ -60,13 +58,13 @@
             </nav>
         </header>
         <main class="container py-4" id="contenido">
-            <!-- Enlaces a las vistas de cuenta dentro del único HTML de inicio. -->
+            <!-- Enlaces a las páginas de inicio de sesión y registro. -->
             <div class="cuenta mb-4">
-                <a href="Inicio.html#ingreso">
+                <a href="login.html">
                     Iniciar sesión
                 </a>
                 |
-                <a href="Inicio.html#registro">
+                <a href="registro.html">
                     Registrarse
                 </a>
             </div>
@@ -175,7 +173,7 @@
                 </aside>
             </div>
         </main>
-        <!-- Pie compartido: identidad, categorías y maqueta del boletín. -->
+        <!-- Pie compartido: identidad de la tienda y categorías. -->
         <footer class="mt-4 py-4">
             <div class="container row-pie">
                 <div>
@@ -198,20 +196,6 @@
                         Videojuegos
                     </a>
                 </nav>
-                <form aria-label="Boletín">
-                    <label for="boletin" class="form-label">
-                        Recibe novedades
-                    </label>
-                    <div class="input-group">
-                        <input id="boletin" class="form-control" type="email" placeholder="Tu correo" autocomplete="email">
-                        <button class="btn boton-verde" type="button" disabled>
-                            Suscribirse
-                        </button>
-                    </div>
-                    <small>
-                        Suscripciones próximamente.
-                    </small>
-                </form>
             </div>
         </footer>
     </body>

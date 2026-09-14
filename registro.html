@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- El viewport permite adaptar las columnas al tamaño del celular. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Sikosis Gaming: videojuegos, accesorios y consejos para tu espacio de juego.">
+        <title>Registro de usuario | Sikosis Gaming</title>
+        <!-- Bootstrap aporta columnas, tarjetas y formularios. Nuestro CSS va después. -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="estilos.css" rel="stylesheet">
+    </head>
+    <body>
+        <a class="saltar" href="#contenido">
+            Saltar al contenido
+        </a>
+        <!-- Menú visible también en celular: no necesita JavaScript para abrirse. -->
+        <header>
+            <nav class="container py-3" aria-label="Navegación principal">
+                <div class="barra">
+                    <a class="marca" href="Inicio.html">
+                        <img class="logo" src="imagenes/SG_logo.png" alt="Logo SG de Sikosis Gaming" width="80" height="62">
+                        Sikosis Gaming
+                    </a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Inicio.html">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="producto.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="btn boton-verde" href="carrito.html">
+                        Carrito
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main class="container py-4" id="contenido">
+            <!-- Enlaces a las páginas de inicio de sesión y registro. -->
+            <div class="cuenta mb-4">
+                <a href="login.html">
+                    Iniciar sesión
+                </a>
+                |
+                <a href="registro.html">
+                    Registrarse
+                </a>
+            </div>
+            <!-- Vista independiente; formulario visual sin envío de datos. -->
+            <section id="registro" class="panel formulario p-4">
+                <h1>
+                    Registro de usuario
+                </h1>
+                <p>
+                    Completa tus datos. El registro aún no guarda información.
+                </p>
+                <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>.</p>
+                <form aria-label="Registro de usuario">
+                    <div class="mb-3">
+                        <label class="form-label" for="run">
+                            RUN
+                        </label>
+                        <input class="form-control" id="run" type="text" required minlength="7" maxlength="9" pattern="[0-9]{6,8}[0-9Kk]" aria-describedby="run-ayuda">
+                        <small id="run-ayuda">
+                            Sin puntos ni guion. El dígito verificador se comprobará en una próxima etapa.
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="nombre">
+                            Nombre
+                        </label>
+                        <input class="form-control" id="nombre" type="text" required maxlength="50" autocomplete="given-name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="apellidos">
+                            Apellidos
+                        </label>
+                        <input class="form-control" id="apellidos" type="text" required maxlength="100" autocomplete="family-name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="correo-registro">
+                            Correo electrónico
+                        </label>
+                        <input class="form-control" id="correo-registro" type="email" required maxlength="100" autocomplete="email" pattern="[^@\s]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)" aria-describedby="correo-registro-ayuda">
+                        <small id="correo-registro-ayuda">
+                            Usa @duoc.cl, @profesor.duoc.cl o @gmail.com.
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="nacimiento">
+                            Fecha de nacimiento (opcional)
+                        </label>
+                        <input class="form-control" id="nacimiento" type="date" autocomplete="bday">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="direccion">
+                            Dirección
+                        </label>
+                        <input class="form-control" id="direccion" type="text" required maxlength="300" autocomplete="street-address">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="clave-registro">
+                            Contraseña
+                        </label>
+                        <input class="form-control" id="clave-registro" type="password" required minlength="4" maxlength="10" autocomplete="new-password" aria-describedby="clave-registro-ayuda">
+                        <small id="clave-registro-ayuda">
+                            Entre 4 y 10 caracteres.
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="confirmar-clave">
+                            Confirmar contraseña
+                        </label>
+                        <input class="form-control" id="confirmar-clave" type="password" required minlength="4" maxlength="10" autocomplete="new-password">
+                    </div>
+                    <!-- Las comunas dependientes necesitan JavaScript; por ahora solo se muestra el campo. -->
+                    <div class="mb-3">
+                        <label class="form-label" for="region">
+                            Región
+                        </label>
+                        <select class="form-select" id="region" required>
+                            <option value="">
+                                Selecciona una región
+                            </option>
+                            <option>
+                                Arica y Parinacota
+                            </option>
+                            <option>
+                                Tarapacá
+                            </option>
+                            <option>
+                                Antofagasta
+                            </option>
+                            <option>
+                                Atacama
+                            </option>
+                            <option>
+                                Coquimbo
+                            </option>
+                            <option>
+                                Valparaíso
+                            </option>
+                            <option>
+                                Metropolitana de Santiago
+                            </option>
+                            <option>
+                                Libertador General Bernardo O’Higgins
+                            </option>
+                            <option>
+                                Maule
+                            </option>
+                            <option>
+                                Ñuble
+                            </option>
+                            <option>
+                                Biobío
+                            </option>
+                            <option>
+                                La Araucanía
+                            </option>
+                            <option>
+                                Los Ríos
+                            </option>
+                            <option>
+                                Los Lagos
+                            </option>
+                            <option>
+                                Aysén
+                            </option>
+                            <option>
+                                Magallanes y la Antártica Chilena
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="comuna">
+                            Comuna
+                        </label>
+                        <select class="form-select" id="comuna" disabled>
+                            <option>
+                                Selección de comuna próximamente
+                            </option>
+                        </select>
+                    </div>
+                    <button class="btn boton-verde" type="button" disabled>
+                        Registrarse
+                    </button>
+                </form>
+            </section>
+        </main>
+        <!-- Pie compartido: identidad de la tienda y categorías. -->
+        <footer class="mt-4 py-4">
+            <div class="container row-pie">
+                <div>
+                    <strong>
+                        Sikosis Gaming
+                    </strong>
+                    <p class="mb-0">
+                        Videojuegos y accesorios para tu próxima partida.
+                    </p>
+                    <small>
+                        © 2026 Sikosis Gaming.
+                    </small>
+                </div>
+                <nav aria-label="Categorías">
+                    <a href="producto.html#accesorios">
+                        Accesorios
+                    </a>
+                    <br>
+                    <a href="producto.html#videojuegos">
+                        Videojuegos
+                    </a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

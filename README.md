@@ -4,11 +4,11 @@
 
 Sikosis Gaming es una propuesta de tienda de videojuegos, consolas y accesorios, desarrollada para practicar HTML y CSS en Desarrollo Fullstack II. El objetivo de esta etapa es construir una carcasa simple: páginas conectadas, productos de referencia, información de la tienda, artículos y formularios visuales.
 
-La identidad utiliza un logo con las iniciales SG, fondo gris y verde `#70b541`. Este verde es una aproximación visual a lo solicitado, no una equivalencia Pantone certificada. Los documentos recibidos usan el nombre anterior GameZone; esta interfaz utiliza el nuevo nombre solicitado. Los originales no se modificaron.
+La identidad utiliza el logo `imagenes/SG_logo.png`, fondo gris y verde `#00b83f` en botones y bordes para combinar con la imagen. Los enlaces usan verde oscuro `#006b29` para facilitar la lectura. Los documentos recibidos usan el nombre anterior GameZone; esta interfaz utiliza el nuevo nombre solicitado. Los originales no se modificaron.
 
 ## Cómo abrir el proyecto
 
-Abre `Inicio.html` en Chrome o Edge. También puedes abrir la carpeta en VS Code y usar Live Server sobre ese archivo. No hay `index.html`: se respetaron únicamente los seis HTML que existían al comenzar.
+Abre `Inicio.html` en Chrome o Edge. También puedes abrir la carpeta en VS Code y usar Live Server sobre ese archivo. La portada conserva ese nombre; no hay `index.html`.
 
 Bootstrap y el reproductor de YouTube requieren internet. Las fotografías están en `imagenes/`. No se necesita instalar Node, Python ni una base de datos para utilizar la página.
 
@@ -16,15 +16,25 @@ Bootstrap y el reproductor de YouTube requieren internet. Las fotografías está
 
 | Archivo | Contenido |
 | --- | --- |
-| `Inicio.html` | Portada, ocho productos destacados, inicio de sesión y registro. |
-| `producto.html` | Catálogo, campos de búsqueda y detalle de cada producto. |
+| `Inicio.html` | Portada y ocho productos destacados. |
+| `producto.html` | Catálogo y campos de búsqueda. |
+| `login.html` | Formulario visual de inicio de sesión. |
+| `registro.html` | Formulario visual de registro de usuario. |
+| `detalle-control.html` | Descripción del control inalámbrico. |
+| `detalle-consola.html` | Descripción de la consola clásica. |
+| `detalle-audifonos.html` | Descripción de los audífonos. |
+| `detalle-teclado.html` | Descripción del teclado compacto. |
+| `detalle-mouse.html` | Descripción del mouse de escritorio. |
+| `detalle-portatil.html` | Descripción de la consola portátil. |
+| `detalle-juegos.html` | Descripción de la selección de videojuegos. |
+| `detalle-setup.html` | Descripción del monitor para jugar. |
 | `nosotros.html` | Descripción de la tienda y del equipo. |
 | `blog.html` | Dos noticias, dos artículos completos y un video. |
 | `contacto.html` | Formulario de contacto. |
 | `carrito.html` | Diseño de un carrito con tres productos de ejemplo y resumen. |
 | `estilos.css` | Colores, logo, imágenes, menú y ajustes para celular. |
 
-Se sigue el flujo público de la Figura 2 del Anexo 1. Para no crear HTML nuevos, ingreso y registro están en `Inicio.html#ingreso` y `Inicio.html#registro`. Los detalles de producto y artículos utilizan enlaces internos con `#`. Esta adaptación conserva los recorridos, aunque no los separa en páginas distintas como el diagrama original.
+Se sigue el flujo público de la Figura 2 del Anexo 1. Ingreso y registro tienen archivos independientes. Cada tarjeta lleva a un HTML de detalle con imagen, precio, descripción, disponibilidad por confirmar y enlaces para volver al catálogo. Las especificaciones no confirmadas permanecen por definir. Los dos artículos del blog siguen dentro de `blog.html`, mediante enlaces internos con `#`.
 
 Se tomaron como referencia la portada de la Figura 3, los formularios de las Figuras 4, 5 y 7, las noticias de la Figura 6, el catálogo y detalle de las Figuras 8 y 9 y el carrito de la Figura 15.
 
@@ -46,11 +56,11 @@ Los atributos `required`, `maxlength`, `minlength`, `type` y `pattern` preparan 
 
 | Requisito | Aplicación y estado en esta etapa |
 | --- | --- |
-| R.1 Navegación | Implementada entre los seis HTML y sus secciones públicas. Administración fuera del alcance. |
+| R.1 Navegación | Implementada entre los 16 HTML y sus secciones públicas. Administración fuera del alcance. |
 | R.2 Catálogo | Visible con imágenes, nombres, categorías y precios. Arreglo JavaScript pendiente. |
-| R.3 Detalle | Cada tarjeta enlaza a su detalle estático en `producto.html`. |
-| R.4 Registro | Formulario visual en `Inicio.html#registro`; creación de cuentas pendiente. |
-| R.5 Inicio de sesión | Formulario visual en `Inicio.html#ingreso`; sesión y perfiles pendientes. |
+| R.3 Detalle | Cada tarjeta enlaza a su propio archivo `detalle-*.html`. |
+| R.4 Registro | Formulario visual en `registro.html`; creación de cuentas pendiente. |
+| R.5 Inicio de sesión | Formulario visual en `login.html`; sesión y perfiles pendientes. |
 | R.6 Nosotros | Información de la propuesta y nombres del equipo en `nosotros.html`. |
 | R.7 Blog | Dos noticias y dos artículos completos con imágenes en `blog.html`. |
 | R.8 Contacto | Formulario con etiquetas y límites; envío pendiente. |
