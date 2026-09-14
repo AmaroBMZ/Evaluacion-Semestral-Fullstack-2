@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sikosis Gaming: videojuegos, accesorios y consejos para tu espacio de juego.">
         <title>
-            Contacto | Sikosis Gaming
+            Nosotros | Sikosis Gaming
         </title>
         <!-- Bootstrap aporta columnas, tarjetas y formularios. Nuestro CSS va después. -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="nosotros.html">
+                            <a class="nav-link activo" href="nosotros.html" aria-current="page">
                                 Nosotros
                             </a>
                         </li>
@@ -48,7 +48,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link activo" href="contacto.html" aria-current="page">
+                            <a class="nav-link" href="contacto.html">
                                 Contacto
                             </a>
                         </li>
@@ -70,56 +70,55 @@
                     Registrarse
                 </a>
             </div>
-            <!-- Figura 7: logo, nombre y formulario centrado. -->
-            <div class="text-center mb-4">
-                <span class="logo" aria-hidden="true">
-                    SG
-                </span>
-                <h1 class="mt-3">
-                    Contacto
-                </h1>
-                <p>
-                    Sikosis Gaming
-                </p>
-            </div>
-            <section class="panel formulario p-4">
-                <h2 class="h4">
-                    Escríbenos
+            <h1>
+                Nosotros
+            </h1>
+            <!-- R.6: información de la tienda y de sus desarrolladores. -->
+            <section class="panel p-4 mb-4">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6">
+                        <h2>
+                            Conoce Sikosis Gaming
+                        </h2>
+                        <p>
+                            Somos una propuesta de tienda de videojuegos, consolas y accesorios. Queremos reunir productos e información para quienes disfrutan jugar en computador o consola.
+                        </p>
+                        <p>
+                            Buscamos que encontrar un accesorio sea sencillo: ver su imagen, revisar sus características y conocer su precio en un mismo lugar.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid foto-portada" src="imagenes/control.jpg" alt="Control de videojuegos blanco sostenido con las manos" width="640" height="420">
+                    </div>
+                </div>
+            </section>
+            <section class="panel p-4 mb-4">
+                <h2>
+                    Nuestro equipo
                 </h2>
                 <p>
-                    Deja tus datos y tu consulta. El envío de mensajes estará disponible próximamente.
+                    Este proyecto es desarrollado por Amaro Barria y Felipe Hernández, estudiantes de Analista Programador.
                 </p>
-                <form aria-label="Formulario de contacto">
-                    <div class="mb-3">
-                        <label class="form-label" for="contacto-nombre">
-                            Nombre
-                        </label>
-                        <input class="form-control" id="contacto-nombre" type="text" required maxlength="100" autocomplete="name">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="contacto-correo">
-                            Correo electrónico (opcional)
-                        </label>
-                        <input class="form-control" id="contacto-correo" type="email" maxlength="100" autocomplete="email" pattern="[^@\s]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)" aria-describedby="contacto-correo-ayuda">
-                        <small id="contacto-correo-ayuda">
-                            Usa @duoc.cl, @profesor.duoc.cl o @gmail.com.
-                        </small>
-                    </div>
-                    <div class="mb-3">
-                        <label for="comentario" class="form-label">
-                            Comentario
-                        </label>
-                        <textarea class="form-control" id="comentario" rows="5" maxlength="500" required aria-describedby="ayuda-comentario">
-                        </textarea>
-                        <small id="ayuda-comentario">
-                            Máximo 500 caracteres.
-                        </small>
-                    </div>
-                    <!-- Sin envío ni almacenamiento de datos en esta etapa. -->
-                    <button class="btn boton-verde" type="button" disabled>
-                        Enviar mensaje
-                    </button>
-                </form>
+                <p>
+                    Estamos aprendiendo a organizar contenido con HTML y a darle estilo con CSS y Bootstrap.
+                </p>
+                <h3 class="h5">
+                    Qué queremos ofrecer
+                </h3>
+                <ul>
+                    <li>
+                        Un catálogo fácil de recorrer.
+                    </li>
+                    <li>
+                        Información clara sobre videojuegos y accesorios.
+                    </li>
+                    <li>
+                        Un espacio para compartir consejos y resolver consultas.
+                    </li>
+                </ul>
+                <a class="btn boton-verde" href="contacto.html">
+                    Ir a contacto
+                </a>
             </section>
         </main>
         <!-- Pie compartido: identidad, categorías y maqueta del boletín. -->

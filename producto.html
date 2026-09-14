@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- El viewport permite adaptar las columnas al tamaño del celular. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Sikosis Gaming: videojuegos, accesorios y consejos para tu espacio de juego.">
+        <title>
+            Productos | Sikosis Gaming
+        </title>
+        <!-- Bootstrap aporta columnas, tarjetas y formularios. Nuestro CSS va después. -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="estilos.css" rel="stylesheet">
+    </head>
+    <body>
+        <a class="saltar" href="#contenido">
+            Saltar al contenido
+        </a>
+        <!-- Menú visible también en celular: no necesita JavaScript para abrirse. -->
+        <header>
+            <nav class="container py-3" aria-label="Navegación principal">
+                <div class="barra">
+                    <a class="marca" href="Inicio.html">
+                        <span class="logo" aria-hidden="true">
+                            SG
+                        </span>
+                        Sikosis Gaming
+                    </a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Inicio.html">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link activo" href="producto.html" aria-current="page">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="btn boton-verde" href="carrito.html">
+                        Carrito
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main class="container py-4" id="contenido">
+            <!-- Enlaces a las vistas de cuenta dentro del único HTML de inicio. -->
+            <div class="cuenta mb-4">
+                <a href="Inicio.html#ingreso">
+                    Iniciar sesión
+                </a>
+                |
+                <a href="Inicio.html#registro">
+                    Registrarse
+                </a>
+            </div>
+            <h1 id="catalogo">
+                Productos
+            </h1>
+            <p>
+                Conoce nuestro catálogo. Los precios son de referencia y las compras estarán disponibles próximamente.
+            </p>
+            <!-- R.16: carcasa de búsqueda y filtro; no modifica el catálogo todavía. -->
+            <form class="panel p-3 mb-4" aria-label="Búsqueda de productos">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="buscar" class="form-label">
+                            Buscar producto
+                        </label>
+                        <input class="form-control" id="buscar" type="search" placeholder="Nombre del producto" disabled>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="categoria" class="form-label">
+                            Categoría
+                        </label>
+                        <select class="form-select" id="categoria" disabled>
+                            <option>
+                                Todas las categorías
+                            </option>
+                            <option>
+                                Accesorios
+                            </option>
+                            <option>
+                                Videojuegos
+                            </option>
+                            <option>
+                                Consolas
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button class="btn boton-verde" type="button" disabled>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                <small>
+                    Búsqueda y filtros próximamente.
+                </small>
+            </form>
+            <section class="mb-4" id="accesorios">
+                <h2>
+                    Accesorios y consolas
+                </h2>
+                <div class="row g-3">
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-control">
+                                <img class="card-img-top foto-producto" src="imagenes/control.jpg" alt="Control inalámbrico" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Accesorios
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-control">
+                                        Control inalámbrico
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $54.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-control">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-consola">
+                                <img class="card-img-top foto-producto" src="imagenes/consola.jpg" alt="Consola clásica" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Consolas
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-consola">
+                                        Consola clásica
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $129.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-consola">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-audifonos">
+                                <img class="card-img-top foto-producto" src="imagenes/audifonos.jpg" alt="Audífonos" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Accesorios
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-audifonos">
+                                        Audífonos
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $44.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-audifonos">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-teclado">
+                                <img class="card-img-top foto-producto" src="imagenes/teclado.jpg" alt="Teclado compacto" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Accesorios
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-teclado">
+                                        Teclado compacto
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $64.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-teclado">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-mouse">
+                                <img class="card-img-top foto-producto" src="imagenes/mouse.jpg" alt="Mouse de escritorio" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Accesorios
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-mouse">
+                                        Mouse de escritorio
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $29.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-mouse">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-portatil">
+                                <img class="card-img-top foto-producto" src="imagenes/portatil.jpg" alt="Consola portátil" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Consolas
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-portatil">
+                                        Consola portátil
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $299.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-portatil">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-setup">
+                                <img class="card-img-top foto-producto" src="imagenes/setup.jpg" alt="Monitor para jugar" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Accesorios
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-setup">
+                                        Monitor para jugar
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $189.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-setup">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-5" id="videojuegos">
+                <h2>
+                    Videojuegos
+                </h2>
+                <div class="row g-3">
+                    <!-- Tarjeta estática: imagen, nombre, categoría y precio de referencia. -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="card h-100">
+                            <a href="producto.html#detalle-juegos">
+                                <img class="card-img-top foto-producto" src="imagenes/juegos.jpg" alt="Selección de videojuegos" width="640" height="420" loading="lazy">
+                            </a>
+                            <div class="card-body">
+                                <p class="categoria">
+                                    Videojuegos
+                                </p>
+                                <h3 class="h5">
+                                    <a href="producto.html#detalle-juegos">
+                                        Selección de videojuegos
+                                    </a>
+                                </h3>
+                                <p class="precio">
+                                    $39.990
+                                </p>
+                                <a class="btn btn-outline-dark btn-sm" href="producto.html#detalle-juegos">
+                                    Ver detalle
+                                </a>
+                                <button class="btn boton-verde btn-sm" type="button" disabled>
+                                    Añadir
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section aria-labelledby="titulo-detalles">
+                <h2 id="titulo-detalles">
+                    Detalles de los productos
+                </h2>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-control">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/control.jpg" alt="Control inalámbrico" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Accesorios
+                            </p>
+                            <h3>
+                                Control inalámbrico
+                            </h3>
+                            <p class="precio">
+                                $54.990
+                            </p>
+                            <p>
+                                Un control para jugar con comodidad. Incluye botones frontales y palancas para desplazarte en tus juegos.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-control" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-control" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-consola">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/consola.jpg" alt="Consola clásica" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Consolas
+                            </p>
+                            <h3>
+                                Consola clásica
+                            </h3>
+                            <p class="precio">
+                                $129.990
+                            </p>
+                            <p>
+                                Una opción para quienes disfrutan los videojuegos clásicos y las partidas compartidas.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-consola" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-consola" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-audifonos">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/audifonos.jpg" alt="Audífonos" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Accesorios
+                            </p>
+                            <h3>
+                                Audífonos
+                            </h3>
+                            <p class="precio">
+                                $44.990
+                            </p>
+                            <p>
+                                Audífonos para escuchar la música y los efectos de tus juegos. Revisa la conexión de tu equipo antes de elegir.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-audifonos" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-audifonos" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-teclado">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/teclado.jpg" alt="Teclado compacto" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Accesorios
+                            </p>
+                            <h3>
+                                Teclado compacto
+                            </h3>
+                            <p class="precio">
+                                $64.990
+                            </p>
+                            <p>
+                                Un teclado de tamaño reducido para organizar tu escritorio y dejar más espacio para el mouse.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-teclado" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-teclado" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-mouse">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/mouse.jpg" alt="Mouse de escritorio" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Accesorios
+                            </p>
+                            <h3>
+                                Mouse de escritorio
+                            </h3>
+                            <p class="precio">
+                                $29.990
+                            </p>
+                            <p>
+                                Un accesorio para controlar el cursor y disfrutar de juegos en computador.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-mouse" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-mouse" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-portatil">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/portatil.jpg" alt="Consola portátil" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Consolas
+                            </p>
+                            <h3>
+                                Consola portátil
+                            </h3>
+                            <p class="precio">
+                                $299.990
+                            </p>
+                            <p>
+                                Una propuesta para llevar tus partidas a distintos lugares y jugar sin un monitor de escritorio.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-portatil" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-portatil" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-juegos">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/juegos.jpg" alt="Selección de videojuegos" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Videojuegos
+                            </p>
+                            <h3>
+                                Selección de videojuegos
+                            </h3>
+                            <p class="precio">
+                                $39.990
+                            </p>
+                            <p>
+                                Una selección de referencia para explorar aventuras y distintos estilos de juego. Títulos definitivos por definir.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-juegos" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-juegos" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <!-- Figura 9: detalle del producto dentro del HTML existente. -->
+                <article class="panel p-4 mb-4" id="detalle-setup">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img class="img-fluid foto-detalle" src="imagenes/setup.jpg" alt="Monitor para jugar" width="640" height="420" loading="lazy">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="categoria">
+                                Accesorios
+                            </p>
+                            <h3>
+                                Monitor para jugar
+                            </h3>
+                            <p class="precio">
+                                $189.990
+                            </p>
+                            <p>
+                                Un monitor para completar tu espacio de juego. Modelo, conexiones y características definitivas por definir.
+                            </p>
+                            <p>
+                                Disponibilidad: por confirmar.
+                            </p>
+                            <label for="cantidad-setup" class="form-label">
+                                Cantidad
+                            </label>
+                            <input class="form-control cantidad mb-3" id="cantidad-setup" type="number" min="1" value="1" disabled>
+                            <button class="btn boton-verde" type="button" disabled>
+                                Añadir al carrito
+                            </button>
+                            <p class="mt-3">
+                                <a href="#catalogo">
+                                    Volver al catálogo
+                                </a>
+                                ·
+                                <a href="carrito.html">
+                                    Ver carrito
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- Pie compartido: identidad, categorías y maqueta del boletín. -->
+        <footer class="mt-4 py-4">
+            <div class="container row-pie">
+                <div>
+                    <strong>
+                        Sikosis Gaming
+                    </strong>
+                    <p class="mb-0">
+                        Videojuegos y accesorios para tu próxima partida.
+                    </p>
+                    <small>
+                        © 2026 Sikosis Gaming.
+                    </small>
+                </div>
+                <nav aria-label="Categorías">
+                    <a href="producto.html#accesorios">
+                        Accesorios
+                    </a>
+                    <br>
+                    <a href="producto.html#videojuegos">
+                        Videojuegos
+                    </a>
+                </nav>
+                <form aria-label="Boletín">
+                    <label for="boletin" class="form-label">
+                        Recibe novedades
+                    </label>
+                    <div class="input-group">
+                        <input id="boletin" class="form-control" type="email" placeholder="Tu correo" autocomplete="email">
+                        <button class="btn boton-verde" type="button" disabled>
+                            Suscribirse
+                        </button>
+                    </div>
+                    <small>
+                        Suscripciones próximamente.
+                    </small>
+                </form>
+            </div>
+        </footer>
+    </body>
+</html>

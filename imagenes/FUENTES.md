@@ -1,8 +1,7 @@
 # Fotografías de referencia
 
-Imágenes descargadas de Unsplash para la maqueta académica.
+Fotografías de Unsplash reutilizadas del historial de este proyecto. Se muestran como referencias, sin asegurar que correspondan a modelos comerciales concretos.
 
-- `portada.jpg`: https://images.unsplash.com/photo-1606318801954-d46d46d3360a
 - `control.jpg`: https://images.unsplash.com/photo-1606318801954-d46d46d3360a
 - `consola.jpg`: https://images.unsplash.com/photo-1486401899868-0e435ed85128
 - `audifonos.jpg`: https://images.unsplash.com/photo-1599669454699-248893623440
