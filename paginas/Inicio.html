@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda académica de videojuegos, consolas y accesorios Sikosis Gaming.">
+    <title>Inicio | Sikosis Gaming</title>
+    <!-- Bootstrap organiza la interfaz. estilos.css personaliza los colores y el diseño. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+    <!-- defer permite que el HTML esté listo antes de ejecutar JavaScript. El orden importa. -->
+    <script src="../js/datos.js" defer></script>
+    <script src="../js/regiones.js" defer></script>
+    <script src="../js/app.js" defer></script>
+</head>
+<body>
+        <a class="saltar" href="#contenido">
+            Saltar al contenido
+        </a>
+        <!-- Menú visible también en celular: no necesita JavaScript para abrirse. -->
+        <header>
+            <nav class="container py-3" aria-label="Navegación principal">
+                <div class="barra">
+                    <a class="marca" href="Inicio.html">
+                        <img class="logo" src="../imagenes/SG_logo.png" alt="Logo SG de Sikosis Gaming" width="80" height="62">
+                        Sikosis Gaming
+                    </a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link activo" href="Inicio.html" aria-current="page">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="producto.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="btn boton-verde" href="carrito.html">
+                        Carrito
+                    </a>
+                </div>
+            </nav>
+        </header>
+    <main class="container py-4" id="contenido" tabindex="-1">
+        <div class="cuenta mb-4">
+            <a href="login.html">Iniciar sesión</a> | <a href="registro.html">Registrarse</a>
+        </div>
+        <div id="aviso" class="aviso" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+            <!-- Figura 3: texto a la izquierda e imagen a la derecha. -->
+            <section class="panel p-4 mb-4">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6">
+                        <p class="categoria">
+                            VIDEOJUEGOS Y ACCESORIOS
+                        </p>
+                        <h1>
+                            Sikosis Gaming
+                        </h1>
+                        <p>
+                            Todo comienza con una buena partida. Explora accesorios, consolas y videojuegos para disfrutar a tu manera.
+                        </p>
+                        <a class="btn boton-verde" href="producto.html">
+                            Ver productos
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid foto-portada" src="../imagenes/setup.jpg" alt="Escritorio con monitor y accesorios para jugar" width="640" height="420">
+                    </div>
+                </div>
+            </section>
+
+        <!-- Las tarjetas se crean recorriendo el arreglo de productos en app.js. -->
+        <section class="mb-4">
+            <h2>Productos destacados</h2>
+            <p>Explora nuestro catálogo de demostración y arma tu carrito.</p>
+            <div id="lista-productos" class="productos-grid"></div>
+        </section>
+    </main>
+        <footer class="mt-4 py-4">
+            <div class="container row-pie">
+                <div>
+                    <strong>
+                        Sikosis Gaming
+                    </strong>
+                    <p class="mb-0">
+                        Videojuegos y accesorios para tu próxima partida.
+                    </p>
+                    <small>
+                        © 2026 Sikosis Gaming.
+                    </small>
+                </div>
+                <nav aria-label="Categorías">
+                    <a href="producto.html?categoria=Accesorios">
+                        Accesorios
+                    </a>
+                    <br>
+                    <a href="producto.html?categoria=Videojuegos">
+                        Videojuegos
+                    </a>
+                </nav>
+            </div>
+        </footer>
+    <noscript><p class="aviso">Activa JavaScript para usar los formularios, productos y carrito.</p></noscript>
+</body>
+</html>

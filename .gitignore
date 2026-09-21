@@ -1,0 +1,5 @@
+# Archivos temporales de revisión y pruebas; no pertenecen a la entrega del código.
+tmp/
+node_modules/
+entrega/*.zip
+*.log
