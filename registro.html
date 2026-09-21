@@ -76,9 +76,14 @@
                 </p>
                 <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>.</p>
                 <form aria-label="Registro de usuario">
+                    <!-- Los requisitos se explican con texto, no solo con color. -->
+                    <p class="form-text">Los campos marcados con * son obligatorios.</p>
+                    <!-- Agrupación semántica de los datos del registro. -->
+                    <fieldset class="mb-4">
+                        <legend class="h5">Datos personales y de contacto</legend>
                     <div class="mb-3">
                         <label class="form-label" for="run">
-                            RUN
+                            RUN *
                         </label>
                         <input class="form-control" id="run" type="text" required minlength="7" maxlength="9" pattern="[0-9]{6,8}[0-9Kk]" aria-describedby="run-ayuda">
                         <small id="run-ayuda">
@@ -87,19 +92,21 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="nombre">
-                            Nombre
+                            Nombre *
                         </label>
-                        <input class="form-control" id="nombre" type="text" required maxlength="50" autocomplete="given-name">
+                        <input class="form-control" id="nombre" type="text" required maxlength="50" autocomplete="given-name" aria-describedby="nombre-limite">
+                        <small class="form-text" id="nombre-limite">Máximo 50 caracteres.</small>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="apellidos">
-                            Apellidos
+                            Apellidos *
                         </label>
-                        <input class="form-control" id="apellidos" type="text" required maxlength="100" autocomplete="family-name">
+                        <input class="form-control" id="apellidos" type="text" required maxlength="100" autocomplete="family-name" aria-describedby="apellidos-limite">
+                        <small class="form-text" id="apellidos-limite">Máximo 100 caracteres.</small>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="correo-registro">
-                            Correo electrónico
+                            Correo electrónico *
                         </label>
                         <input class="form-control" id="correo-registro" type="email" required maxlength="100" autocomplete="email" pattern="[^@\s]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)" aria-describedby="correo-registro-ayuda">
                         <small id="correo-registro-ayuda">
@@ -114,13 +121,18 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="direccion">
-                            Dirección
+                            Dirección *
                         </label>
-                        <input class="form-control" id="direccion" type="text" required maxlength="300" autocomplete="street-address">
+                        <input class="form-control" id="direccion" type="text" required maxlength="300" autocomplete="street-address" aria-describedby="direccion-limite">
+                        <small class="form-text" id="direccion-limite">Máximo 300 caracteres.</small>
                     </div>
+                    </fieldset>
+                    <fieldset class="mb-4">
+                        <legend class="h5">Contraseña de la cuenta</legend>
+                        <p class="form-text" id="confirmacion-ayuda">Repite la misma contraseña. La comprobación de coincidencia se incorporará más adelante.</p>
                     <div class="mb-3">
                         <label class="form-label" for="clave-registro">
-                            Contraseña
+                            Contraseña *
                         </label>
                         <input class="form-control" id="clave-registro" type="password" required minlength="4" maxlength="10" autocomplete="new-password" aria-describedby="clave-registro-ayuda">
                         <small id="clave-registro-ayuda">
@@ -129,14 +141,18 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="confirmar-clave">
-                            Confirmar contraseña
+                            Confirmar contraseña *
                         </label>
-                        <input class="form-control" id="confirmar-clave" type="password" required minlength="4" maxlength="10" autocomplete="new-password">
+                        <input class="form-control" id="confirmar-clave" aria-describedby="confirmacion-ayuda" type="password" required minlength="4" maxlength="10" autocomplete="new-password">
                     </div>
+                    </fieldset>
+                    <fieldset class="mb-4">
+                        <legend class="h5">Región y comuna</legend>
+                    <p class="form-text" id="comuna-ayuda">La selección de comunas según la región estará disponible en una próxima etapa.</p>
                     <!-- Las comunas dependientes necesitan JavaScript; por ahora solo se muestra el campo. -->
                     <div class="mb-3">
                         <label class="form-label" for="region">
-                            Región
+                            Región *
                         </label>
                         <select class="form-select" id="region" required>
                             <option value="">
@@ -196,12 +212,13 @@
                         <label class="form-label" for="comuna">
                             Comuna
                         </label>
-                        <select class="form-select" id="comuna" disabled>
+                        <select class="form-select" id="comuna" aria-describedby="comuna-ayuda" disabled>
                             <option>
                                 Selección de comuna próximamente
                             </option>
                         </select>
                     </div>
+                    </fieldset>
                     <button class="btn boton-verde" type="button" disabled>
                         Registrarse
                     </button>

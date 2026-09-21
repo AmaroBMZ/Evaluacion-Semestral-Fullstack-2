@@ -29,12 +29,14 @@ Bootstrap y el reproductor de YouTube requieren internet. Las fotografías está
 | `detalle-juegos.html` | Descripción de la selección de videojuegos. |
 | `detalle-setup.html` | Descripción del monitor para jugar. |
 | `nosotros.html` | Descripción de la tienda y del equipo. |
-| `blog.html` | Dos noticias, dos artículos completos y un video. |
+| `blog.html` | Listado de dos noticias y un video. |
+| `detalle-blog-espacio.html` | Artículo sobre organización del espacio de juego. |
+| `detalle-blog-control.html` | Artículo sobre control y teclado. |
 | `contacto.html` | Formulario de contacto. |
 | `carrito.html` | Diseño de un carrito con tres productos de ejemplo y resumen. |
 | `estilos.css` | Colores, logo, imágenes, menú y ajustes para celular. |
 
-Se sigue el flujo público de la Figura 2 del Anexo 1. Ingreso y registro tienen archivos independientes. Cada tarjeta lleva a un HTML de detalle con imagen, precio, descripción, disponibilidad por confirmar y enlaces para volver al catálogo. Las especificaciones no confirmadas permanecen por definir. Los dos artículos del blog siguen dentro de `blog.html`, mediante enlaces internos con `#`.
+Se sigue el flujo público de la Figura 2 del Anexo 1. Ingreso y registro tienen archivos independientes. Cada tarjeta lleva a un HTML de detalle con imagen, precio, descripción, disponibilidad por confirmar y enlaces para volver al catálogo. Las especificaciones no confirmadas permanecen por definir. Los dos artículos tienen páginas independientes, con enlaces al listado, al otro artículo y al catálogo.
 
 Se tomaron como referencia la portada de la Figura 3, los formularios de las Figuras 4, 5 y 7, las noticias de la Figura 6, el catálogo y detalle de las Figuras 8 y 9 y el carrito de la Figura 15.
 
@@ -48,7 +50,7 @@ Referencia de Bootstrap: https://getbootstrap.com/docs/5.3/layout/grid/
 
 ## Alcance de esta carcasa
 
-Funcionan los enlaces entre páginas y secciones. Los campos de los formularios se pueden completar, pero los botones de envío, registro, ingreso, compras y suscripciones están deshabilitados. No se envían ni guardan datos, no se inicia sesión y no se modifica el carrito. Los precios, cantidades y el total del carrito son ejemplos escritos en HTML, no cálculos automáticos ni existencias reales.
+Funcionan los enlaces entre páginas y secciones. Los campos de los formularios se pueden completar, pero los botones de envío, registro, ingreso, compras están deshabilitados. No se envían ni guardan datos, no se inicia sesión y no se modifica el carrito. Los precios, cantidades y el total del carrito son ejemplos escritos en HTML, no cálculos automáticos ni existencias reales.
 
 Los atributos `required`, `maxlength`, `minlength`, `type` y `pattern` preparan reglas básicas en los campos; no equivalen a validaciones JavaScript ni validación del dígito verificador del RUN. Como no hay envío habilitado, tampoco se presenta un flujo de validación completo. Las comunas dependientes y la comparación de contraseñas quedan pendientes.
 
@@ -56,13 +58,13 @@ Los atributos `required`, `maxlength`, `minlength`, `type` y `pattern` preparan 
 
 | Requisito | Aplicación y estado en esta etapa |
 | --- | --- |
-| R.1 Navegación | Implementada entre los 16 HTML y sus secciones públicas. Administración fuera del alcance. |
+| R.1 Navegación | Implementada entre los 18 HTML y sus secciones públicas. Administración fuera del alcance. |
 | R.2 Catálogo | Visible con imágenes, nombres, categorías y precios. Arreglo JavaScript pendiente. |
 | R.3 Detalle | Cada tarjeta enlaza a su propio archivo `detalle-*.html`. |
 | R.4 Registro | Formulario visual en `registro.html`; creación de cuentas pendiente. |
 | R.5 Inicio de sesión | Formulario visual en `login.html`; sesión y perfiles pendientes. |
 | R.6 Nosotros | Información de la propuesta y nombres del equipo en `nosotros.html`. |
-| R.7 Blog | Dos noticias y dos artículos completos con imágenes en `blog.html`. |
+| R.7 Blog | Listado en `blog.html` y dos detalles independientes con imagen y contenido completo (Figura 2 y R.7). |
 | R.8 Contacto | Formulario con etiquetas y límites; envío pendiente. |
 | R.9 Carrito | Vista de ejemplo; agregar, quitar, cantidades, cálculo y persistencia pendientes. |
 | R.10 Validación | Atributos HTML y ayudas estáticas; mensajes dinámicos y reglas JavaScript pendientes. |
@@ -107,3 +109,14 @@ La carcasa no completa el 40 % por sí sola. Para la entrega completa deberán h
 - Tráiler oficial de Minecraft: https://www.youtube.com/watch?v=MmB9b5njVbA (canal oficial Minecraft). Se enlaza e integra el reproductor; no se aloja el video.
 
 Desarrolladores indicados en el ERS: Amaro Barria y Felipe Hernández.
+
+## Avance del 20 de septiembre: vistas sin JavaScript
+
+- R.7: se separaron los dos artículos en sus propios HTML, siguiendo el flujo Blog → Detalle del Anexo 1.
+- R.1: navegación del listado a cada artículo, regreso al blog y enlaces entre artículos.
+- R.4, R.5 y R.8 (avance visual): campos obligatorios identificados, límites visibles y ayudas en registro, ingreso y contacto. Registro organizado con `fieldset` y `legend`.
+- R.18: ayudas asociadas mediante `aria-describedby`, ruta de navegación y encabezado principal en cada artículo. Se mantienen foco visible y acceso por teclado.
+- R.15: comentarios de las nuevas secciones, páginas separadas y estilos compartidos con Bootstrap básico.
+- IE1.1.1: avance de estructura y navegación HTML. No se completa IE1.2.1: no se agregaron scripts ni mensajes de validación dinámicos.
+
+Los formularios siguen sin enviar ni guardar datos. No se implementaron cuentas, carrito, búsqueda, inventario ni administración. No se certifican tiempos de carga, porcentajes de disponibilidad o compatibilidad sin mediciones. La revisión visual en navegador queda pendiente.

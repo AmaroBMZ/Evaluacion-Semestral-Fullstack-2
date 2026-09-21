@@ -86,11 +86,14 @@
                     Deja tus datos y tu consulta. El envío de mensajes estará disponible próximamente.
                 </p>
                 <form aria-label="Formulario de contacto">
+                    <!-- Los requisitos se explican con texto, no solo con color. -->
+                    <p class="form-text">Los campos marcados con * son obligatorios.</p>
                     <div class="mb-3">
                         <label class="form-label" for="contacto-nombre">
-                            Nombre
+                            Nombre *
                         </label>
-                        <input class="form-control" id="contacto-nombre" type="text" required maxlength="100" autocomplete="name">
+                        <input class="form-control" id="contacto-nombre" type="text" required maxlength="100" autocomplete="name" aria-describedby="contacto-nombre-limite">
+                        <small class="form-text" id="contacto-nombre-limite">Máximo 100 caracteres.</small>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="contacto-correo">
@@ -103,10 +106,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="comentario" class="form-label">
-                            Comentario
+                            Comentario *
                         </label>
-                        <textarea class="form-control" id="comentario" rows="5" maxlength="500" required aria-describedby="ayuda-comentario">
-                        </textarea>
+                        <textarea class="form-control" id="comentario" rows="5" maxlength="500" required aria-describedby="ayuda-comentario"></textarea>
                         <small id="ayuda-comentario">
                             Máximo 500 caracteres.
                         </small>

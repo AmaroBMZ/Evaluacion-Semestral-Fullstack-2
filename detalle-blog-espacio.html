@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sikosis Gaming: videojuegos, accesorios y consejos para tu espacio de juego.">
-        <title>Iniciar sesión | Sikosis Gaming</title>
+        <title>Cómo organizar tu espacio de juego | Sikosis Gaming</title>
         <!-- Bootstrap aporta columnas, tarjetas y formularios. Nuestro CSS va después. -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="estilos.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html">
+                            <a class="nav-link activo" href="blog.html" aria-current="location">
                                 Blog
                             </a>
                         </li>
@@ -66,49 +66,37 @@
                     Registrarse
                 </a>
             </div>
-            <!-- Vista independiente; formulario visual sin envío de datos. -->
-            <section id="ingreso" class="panel formulario p-4 mb-4">
-                <div class="text-center">
-                    <img class="logo" src="imagenes/SG_logo.png" alt="Logo SG de Sikosis Gaming" width="80" height="62">
-                    <h1 class="mt-3">
-                        Iniciar sesión
+            <!-- La ruta permite volver al listado sin usar el botón del navegador. -->
+            <nav aria-label="Ubicación" class="mb-3">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="Inicio.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Artículo</li>
+                </ol>
+            </nav>
+                <article class="panel p-4 mb-4" id="articulo-espacio">
+                    <h1>
+                        Cómo organizar tu espacio de juego
                     </h1>
+                    <img class="img-fluid foto-articulo mb-3" src="imagenes/setup.jpg" alt="Cómo organizar tu espacio de juego" width="640" height="420" loading="eager">
                     <p>
-                        Sikosis Gaming
+                        Antes de agregar accesorios, revisa cuánto espacio tienes. Ubica el monitor donde puedas verlo con comodidad y deja una zona libre para mover el mouse.
                     </p>
-                </div>
-                <form aria-label="Inicio de sesión">
-                    <!-- Los requisitos se explican con texto, no solo con color. -->
-                    <p class="form-text">Los campos marcados con * son obligatorios.</p>
-                    <div class="mb-3">
-                        <label class="form-label" for="correo-ingreso">
-                            Correo electrónico *
-                        </label>
-                        <input class="form-control" id="correo-ingreso" type="email" required maxlength="100" autocomplete="email" pattern="[^@\s]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)" aria-describedby="correo-ingreso-ayuda">
-                        <small id="correo-ingreso-ayuda">
-                            Usa @duoc.cl, @profesor.duoc.cl o @gmail.com.
-                        </small>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="clave-ingreso">
-                            Contraseña *
-                        </label>
-                        <input class="form-control" id="clave-ingreso" type="password" required minlength="4" maxlength="10" autocomplete="current-password" aria-describedby="clave-ingreso-ayuda">
-                        <small id="clave-ingreso-ayuda">
-                            Entre 4 y 10 caracteres.
-                        </small>
-                    </div>
                     <p>
-                        El acceso a cuentas estará disponible próximamente.
+                        Agrupa los cables y evita tapar las entradas de ventilación de tus equipos. Mantener un lugar para cada accesorio hace más sencillo ordenar al terminar una partida.
                     </p>
-                    <button class="btn boton-verde" type="button" disabled>
-                        Ingresar
-                    </button>
-                    <a class="ms-2" href="registro.html">
-                        Crear una cuenta
+                    <p>
+                        No necesitas comprar todo al mismo tiempo. Comienza con lo que ya tienes y piensa qué cambio te ayudaría más: iluminación, espacio o una mejor ubicación del monitor.
+                    </p>
+                    <a href="blog.html#noticias">
+                        Volver a las noticias
                     </a>
-                </form>
-            </section>
+                </article>
+            <!-- Navegación entre los dos detalles indicados en el Anexo 1. -->
+            <nav aria-label="Más lecturas" class="mb-4">
+                <a class="btn boton-verde" href="detalle-blog-control.html">Leer el otro artículo</a>
+                <a class="btn btn-outline-dark" href="producto.html">Ver productos</a>
+            </nav>
         </main>
         <!-- Pie compartido: identidad de la tienda y categorías. -->
         <footer class="mt-4 py-4">
