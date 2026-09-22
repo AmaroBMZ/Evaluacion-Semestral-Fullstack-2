@@ -95,3 +95,32 @@ La disponibilidad del 95 % solo puede medirse después de publicar durante el pe
 - Video oficial de Minecraft: https://www.youtube.com/watch?v=MmB9b5njVbA.
 
 Desarrolladores indicados en el ERS original: Amaro Barria y Felipe Hernández.
+
+## Panel de cliente
+
+Desde **Mi perfil y compras**, una cuenta Cliente puede consultar sus propios pedidos y desplegar productos, cantidades, precios, total, estado y direcci?n registrada. Tambi?n puede editar nombre, apellidos, tel?fono opcional, nacimiento, direcci?n, regi?n y comuna. Correo y RUN se muestran como identificadores de la cuenta.
+
+Los pedidos nuevos conservan una copia de los datos de entrega al confirmar. Cambiar el perfil no modifica pedidos anteriores; los antiguos que no tienen direcci?n lo indican expresamente. El estado sigue siendo el del pedido de demostraci?n, sin seguimiento de despacho real. El carrito permite revisar la direcci?n y acceder al perfil antes de confirmar.
+
+## Productos y futura base SQL
+
+Las tarjetas se generan con `tarjetaProducto(producto)` y el detalle con `mostrarDetalle()`, en `js/productos-vista.js`. El HTML contiene el contenedor `lista-productos`, sin tarjetas individuales. El filtro de categorias tambien se completa con JavaScript.
+
+`js/productos-datos.js` contiene la carga inicial de ejemplo. Actualmente se copia a `localStorage`; los cambios del administrador siguen siendo la fuente de los productos mostrados. Modificar los ejemplos no reemplaza datos ya guardados en un navegador.
+
+Contrato actual de cada producto:
+
+| Campo | Tipo | Uso |
+| --- | --- | --- |
+| codigo | string | Identificador unico y estable |
+| nombre | string | Nombre visible |
+| descripcion | string | Texto del detalle |
+| precio | number | Precio no negativo |
+| stock | integer | Unidades disponibles |
+| critico | integer o null | Umbral opcional de alerta |
+| imagen | string | Ruta local o URL HTTPS |
+| categoria | string | Nombre de la categoria |
+
+La futura conexion sera: pagina ? API del backend ? SQL. La API puede devolver estos mismos campos en JSON para reutilizar las plantillas. Endpoints propuestos: GET /api/productos, GET /api/productos/:codigo, POST /api/productos, PUT /api/productos/:codigo y DELETE /api/productos/:codigo.
+
+Esta preparacion separa datos y presentacion; todavia no implementa API ni conexion SQL. Al incorporar el backend habra que adaptar carga asincrona, estados de carga/error y operaciones administrativas. La confirmacion de pedidos y el descuento de stock deberan ejecutarse juntos en una transaccion del servidor. Las credenciales SQL pertenecen al backend.

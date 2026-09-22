@@ -98,7 +98,7 @@ function actualizarCuenta() {
     const usuario = usuarioActual();
     if (cuenta && usuario) {
         cuenta.innerHTML = "<span>Hola, " + escapar(usuario.nombre) + "</span> " +
-            (usuario.rol !== "Cliente" ? '<a href="admin.html">Panel de gestión</a> ' : "") +
+            (usuario.rol !== "Cliente" ? '<a href="admin.html">Panel de gestión</a> ' : '<a class="btn btn-outline-dark btn-sm" href="cliente.html">Mi Perfil</a>') +
             '<button class="btn btn-outline-dark btn-sm" id="cerrar-sesion">Cerrar sesión</button>';
         document.getElementById("cerrar-sesion").addEventListener("click", function () {
             sessionStorage.removeItem(CLAVE_SESION);
@@ -144,51 +144,6 @@ function agregarCarrito(codigo, cantidad) {
     }
 }
 
-function tarjetaProducto(producto) {
-    return '<article class="card"><a href="' + enlaceDetalle(producto.codigo) + '">' +
-        '<img class="foto-producto" src="' + escapar(imagenSegura(producto.imagen)) + '" alt="' + escapar(producto.nombre) + '" loading="lazy" width="640" height="420"></a>' +
-        '<div class="card-body"><p class="categoria">' + escapar(producto.categoria) + '</p><h3 class="h5">' + escapar(producto.nombre) + '</h3>' +
-        '<p class="precio">' + dinero(producto.precio) + '</p><p>' + (producto.stock > 0 ? "Disponibles: " + producto.stock : "Agotado") + '</p>' +
-        '<a class="btn btn-outline-dark" href="' + enlaceDetalle(producto.codigo) + '">Ver detalle</a> ' +
-        '<button class="btn boton-verde" data-agregar="' + escapar(producto.codigo) + '" ' + (producto.stock === 0 ? "disabled" : "") + '>Añadir al carrito</button></div></article>';
-}
-
-// La misma función dibuja el inicio y el catálogo, con filtros opcionales.
-function mostrarCatalogo() {
-    const contenedor = document.getElementById("lista-productos");
-    if (!contenedor) return;
-    const buscador = document.getElementById("buscar");
-    const filtro = document.getElementById("categoria");
-    const texto = buscador ? buscador.value.trim().toLocaleLowerCase("es") : "";
-    const categoria = filtro ? filtro.value : "";
-    const lista = datos.productos.filter(function (producto) {
-        return producto.nombre.toLocaleLowerCase("es").includes(texto) && (!categoria || producto.categoria === categoria);
-    });
-    contenedor.innerHTML = lista.map(tarjetaProducto).join("") || "<p>No hay productos para esta búsqueda.</p>";
-    const resultado = document.getElementById("resultado-busqueda");
-    if (resultado) resultado.textContent = lista.length + " productos encontrados.";
-}
-
-function mostrarDetalle() {
-    const contenedor = document.getElementById("detalle-producto");
-    if (!contenedor) return;
-    const codigo = new URLSearchParams(location.search).get("codigo") || document.body.dataset.producto;
-    const producto = buscarProducto(codigo);
-    if (!producto) {
-        contenedor.innerHTML = '<h1>Producto no disponible</h1><p>Puede haber sido eliminado.</p><a href="producto.html">Volver al catálogo</a>';
-        return;
-    }
-    document.title = producto.nombre + " | Sikosis Gaming";
-    contenedor.innerHTML = '<div class="detalle-grid"><img class="foto-detalle" src="' + escapar(imagenSegura(producto.imagen)) + '" alt="' + escapar(producto.nombre) + '">' +
-        '<div><p class="categoria">' + escapar(producto.categoria) + '</p><h1>' + escapar(producto.nombre) + '</h1><p class="precio">' + dinero(producto.precio) + '</p>' +
-        '<p>' + escapar(producto.descripcion || "Sin descripción adicional.") + '</p><p>' + (producto.stock ? "Disponibles: " + producto.stock : "Agotado") + '</p>' +
-        '<label for="cantidad-detalle">Cantidad</label><input id="cantidad-detalle" class="form-control cantidad" type="number" min="1" max="' + producto.stock + '" step="1" value="1">' +
-        '<button class="btn boton-verde mt-3" id="agregar-detalle" ' + (!producto.stock ? "disabled" : "") + '>Añadir al carrito</button></div></div>';
-    document.getElementById("agregar-detalle").addEventListener("click", function () {
-        agregarCarrito(codigo, Number(document.getElementById("cantidad-detalle").value));
-    });
-}
-
 function mostrarCarrito() {
     const contenedor = document.getElementById("contenido-carrito");
     if (!contenedor) return;
@@ -213,11 +168,17 @@ function mostrarCarrito() {
     document.getElementById("total-carrito").textContent = dinero(total);
     document.getElementById("confirmar-pedido").disabled = !valido;
     document.getElementById("vaciar-carrito").disabled = carrito.length === 0;
+    const entrega = document.getElementById("entrega-carrito");
+    const cliente = usuarioActual();
+    if (entrega) entrega.textContent = cliente && cliente.rol === "Cliente"
+        ? "Direcci?n de entrega: " + [cliente.direccion, cliente.comuna, cliente.region].filter(Boolean).join(", ")
+        : "Inicia sesi?n para consultar tu direcci?n de entrega.";
     actualizarContador();
 }
 
 // Pedido académico: guardamos una copia de nombres y precios para conservar el historial.
 function confirmarPedido() {
+    datos = cargarDatos();
     const usuario = usuarioActual();
     if (!usuario || usuario.rol !== "Cliente") return avisar("Inicia sesión con una cuenta Cliente para confirmar un pedido de demostración.", true);
     // Volvemos a leer antes de comprar para comprobar el stock más reciente.
@@ -238,7 +199,8 @@ function confirmarPedido() {
     if (!confirm("¿Confirmar este pedido de demostración? Se descontará el stock, sin cobros ni despachos.")) return;
     items.forEach(function (item) { buscarProducto(item.codigo).stock -= item.cantidad; });
     const numero = "SG-" + Date.now();
-    datos.ordenes.push({ numero: numero, fecha: new Date().toISOString(), cliente: usuario.correo, items: items, total: Math.round(total * 100) / 100, estado: "Demostración confirmada" });
+    const entrega = { nombre: usuario.nombre, apellidos: usuario.apellidos, telefono: usuario.telefono || "", direccion: usuario.direccion, region: usuario.region, comuna: usuario.comuna };
+    datos.ordenes.push({ entrega: entrega, numero: numero, fecha: new Date().toISOString(), cliente: usuario.correo, items: items, total: Math.round(total * 100) / 100, estado: "Demostración confirmada" });
     datos.carritos[claveCarrito()] = [];
     if (guardarDatos()) {
         mostrarCarrito();
@@ -420,6 +382,7 @@ function prepararCuentas() {
 actualizarCuenta();
 cargarRegiones();
 prepararCuentas();
+cargarCategoriasCatalogo();
 mostrarCatalogo();
 mostrarDetalle();
 mostrarCarrito();

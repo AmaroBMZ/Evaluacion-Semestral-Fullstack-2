@@ -104,3 +104,11 @@ dd { overflow-wrap: anywhere; }
     .cuenta { justify-content: flex-start; }
     .panel { padding: 16px !important; }
 }
+
+/* Historial del cliente: detalles desplegables y textos largos adaptables. */
+.compra-cliente { padding: 20px 0; border-bottom: 1px solid #b8b8b8; overflow-wrap: anywhere; }
+.compra-cliente:last-child { border-bottom: 0; }
+.compra-cliente summary { cursor: pointer; color: #006b29; font-weight: bold; }
+#identidad-cliente { overflow-wrap: anywhere; }
+
+.cuenta .btn { display: inline-flex; align-items: center; justify-content: center; }

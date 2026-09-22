@@ -55,6 +55,13 @@ function noEncontrado(nombre) {
     panel.innerHTML = '<h1>' + nombre + ' no encontrado</h1><p>El registro no existe o fue eliminado.</p>' + enlaceAdmin("productos", "Volver a productos");
 }
 
+// Generamos un identificador que no exista, incluso al crear varios borradores.
+function generarCodigoProducto() {
+    let numero = 1;
+    while (datos.productos.some(function (p) { return p.codigo.toLowerCase() === "prod-" + numero; })) numero++;
+    return "PROD-" + numero;
+}
+
 function editarProducto() {
     const codigo = parametros.get("codigo");
     const producto = buscarProducto(codigo);
@@ -77,14 +84,14 @@ function editarProducto() {
     prepararFormulario(document.getElementById("form-producto"), function () {
         if (!esAdministrador()) return avisar("No tienes permiso para guardar productos.", true);
         const nuevo = {
-            codigo: document.getElementById("codigo").value.trim(),
-            nombre: document.getElementById("nombre-producto").value.trim(),
-            descripcion: document.getElementById("descripcion").value.trim(),
+            codigo: producto ? producto.codigo : (document.getElementById("codigo").value.trim() || generarCodigoProducto()),
+            nombre: document.getElementById("nombre-producto").value.trim() || "Sin informaci\u00f3n",
+            descripcion: document.getElementById("descripcion").value.trim() || "Sin informaci\u00f3n",
             precio: Number(document.getElementById("precio").value),
             stock: Number(document.getElementById("stock").value),
             critico: document.getElementById("critico").value === "" ? null : Number(document.getElementById("critico").value),
-            categoria: selector.value,
-            imagen: document.getElementById("imagen").value.trim()
+            categoria: selector.value || "Sin categor\u00eda",
+            imagen: document.getElementById("imagen").value.trim() || "imagenes/SG_logo.png"
         };
         const repetido = datos.productos.some(function (p) { return p.codigo.toLowerCase() === nuevo.codigo.toLowerCase() && p.codigo !== codigo; });
         if (repetido) return errorCampo(document.getElementById("codigo"), "Ya existe un producto con ese código.");
@@ -143,6 +150,7 @@ function editarUsuario() {
         }
         if (usuario) {
             if (!nuevo.clave) nuevo.clave = usuario.clave;
+            nuevo.telefono = usuario.telefono || "";
             datos.usuarios[datos.usuarios.findIndex(function (u) { return u.correo === correo; })] = nuevo;
         } else datos.usuarios.push(nuevo);
         if (guardarDatos()) location.href = "admin.html?vista=usuarios&guardado=1";
