@@ -1,19 +1,16 @@
-import Boton2 from "./Boton2";
+﻿import Boton2 from "./Boton2";
 
 // ==========================================
-// COMPONENTE HERO (SECCIÓN DESTACADA)
+// COMPONENTE HERO (SECCIÃ“N DESTACADA)
 // ==========================================
 // Banner principal de bienvenida que presenta el eslogan de Sikosis Gaming
-// y un botón de llamada a la acción (Call to Action) que desplaza suavemente
-// la vista hacia el catálogo de productos.
+// y un botÃ³n de llamada a la acciÃ³n (Call to Action) que desplaza suavemente
+// la vista hacia el catÃ¡logo de productos.
 function Hero() {
   // Manejador que utiliza la API nativa de JavaScript scrollIntoView
   // para hacer un desplazamiento suave hacia el elemento #catalogo
   const alIrACatalogo = () => {
-    const el = document.getElementById("catalogo");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.hash = "productos";
   };
 
   return (
