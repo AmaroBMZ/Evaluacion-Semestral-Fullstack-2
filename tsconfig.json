@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./sikosisGaming/tsconfig.app.json" },
+    { "path": "./sikosisGaming/tsconfig.node.json" }
+  ]
+}
+
